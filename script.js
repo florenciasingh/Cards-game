@@ -69,9 +69,8 @@ function jugar() {
 function verGuardadas() {
   datos.classList.add("datos-out");
 
-  // setTimeout("transicion1a5()", 450);
+  setTimeout("transicion1a5()", 450);
 }
-
 function transicion1a5() {
   vista5.classList.remove("off");
   datos.classList.add("off");
