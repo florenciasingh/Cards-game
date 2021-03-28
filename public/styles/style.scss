@@ -1,0 +1,383 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*globales*/
+.off {
+    display: none !important;
+  }
+
+.on {
+    display: block;
+  }
+
+.flex-center {
+    display: flex !important;
+    justify-items: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+/*Primera pantalla*/
+  .welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("/images/background-horizontal.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .datos {
+    font-family: 'Bree Serif', serif;
+    background-color: rgba(219,122,98,.7);
+    border-radius: 15px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 80%;
+    transition: all 0.6s ease-in;
+
+    input {
+      font-family: 'Bree Serif', serif;
+      transition: all 0.6s;
+      margin-bottom: 5px;
+      border-radius: 15px;
+      border: 1px #e76f51 solid;
+    }
+
+    ::placeholder{
+      padding-left: 8px;
+    }
+
+    button {
+      font-family: 'Bree Serif', serif;
+      border-radius: 15px;
+      border: 1px #e76f51 solid;
+      color: #3b3736;
+      padding: 5px;
+      margin-top: 5px;
+    }
+  }
+  
+  .bienvenida {
+    text-align: center;
+    font-size: 2.5vw;
+    line-height: 0;
+    color: #3b3736;
+
+    @media screen and (max-width:450px){
+      font-size: 5vw;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /*transitions*/
+  
+.datos-out {
+  transform: translateY(150%);
+}
+#loading-img {
+  width: 160px;
+}
+@keyframes girar {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+.girar {
+  animation: girar infinite 1s;
+}
+
+/*Segunda pantalla*/
+#close {
+  text-align: left;
+}
+#cartas-section {
+  width: 100%;
+  height: 100vh;
+  transition: all 0.6s;
+  text-align: center;
+  overflow: hidden;
+}
+
+.carta-total {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-items: center;
+  justify-content: space-between;
+  align-items: center;
+}
+.carta {
+  min-width: 100% !important;
+}
+
+.cartatitulo {
+  font-family: 'Bree Serif', serif;
+}
+.carta-img {
+  width: 200px;
+  height: 40vh;
+  background-color: #fcd174;
+  margin: 35px auto;
+  border-radius: 15px;
+  overflow: hidden;
+}
+#cartas-container {
+  box-sizing: border-box;
+  height: 95vh;
+  margin-top: 2.5vh;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  border-radius: 20px;
+  background-color: rgba(219,122,98,.7);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+}
+.cartas-in {
+  transform: translateY(-98%);
+}
+.card-info {
+  max-width: 85%;
+  margin: 10px auto;
+  min-height: 108px;
+  max-height: 109px;
+  overflow: scroll;
+  font-size: 20px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+#botonera ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+}
+#botonera ul li {
+  color: #fcd174;
+}
+h2 {
+  font-family: 'Bree Serif', serif;
+}
+.red {
+  background-color: red;
+}
+.violet {
+  background-color: violet;
+}
+
+.blue {
+  background-color: blue;
+}
+.first-card {
+  transform: translateX(0%);
+}
+.second-card {
+  transform: translateX(-100%);
+}
+.third-card {
+  transform: translateX(-200%);
+}
+.fourth-card {
+  transform: translateX(-300%);
+}
+.fifth-card {
+  transform: translateX(-400%);
+}
+.sixth-card {
+  transform: translateX(-500%);
+}
+.seventh-card {
+  transform: translateX(-600%);
+}
+#carta-actual {
+  transition: all 0.6s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+#lisa {
+  width: 120px;
+}
+.img-de-carta {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  align-items: center;
+  width: 100%;
+}
+
+/*Pantalla resultados*/
+
+#resultados-section {
+  width: 100%;
+  height: 100vh;
+  transition: all 0.6s ease-in-out;
+  text-align: center;
+  overflow: hidden;
+}
+#resultados-container {
+  box-sizing: border-box;
+  height: 95vh;
+  width: 90%;
+  margin-top: 2.5vh;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  background-color: #fcd174;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow-x: hidden;
+  font-family: 'Bree Serif', serif;
+}
+.resultados-in {
+  transform: translateY(-197%);
+}
+
+.circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 5px;
+}
+#terminar {
+  text-align: right;
+  margin-top: -25px;
+}
+.img-icon {
+  width: 100%;
+  height: 100%;
+}
+.cartatitulo {
+  font-size: 20px;
+}
+#guardadas {
+  font-family: 'Bree Serif', serif;
+  border-radius: 15px;
+  margin: 10px;
+  height: 300px;
+  padding: 20px;
+  width: 82%;
+  transition: all 0.6s ease-in;
+  background-color: #fcd174;
+  
+}
+button {
+  background-color: #e76f51;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+}
+button:focus {
+  outline: none !important;
+}
+input:focus {
+  outline: none;
+}
+.ultima-carta {
+  display: flex;
+  flex-direction: column;
+}
+.ultima-carta button {
+  margin: 20px;
+}
+.final {
+  display: flex;
+  flex-direction: column;
+}
+.final button {
+  margin: 10px;
+}
+@keyframes bg-up {
+  0% {
+    background-position-x: 29vh;
+  }
+  100% {
+    background-position-x: -209vh;
+  }
+}
+.background-up {
+  animation: bg-up 3s;
+}
+
+
+//Guardadas
+
+#lista-guardadas {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0px;
+  padding: 0px;
+}
+#lista-guardadas li {
+  background-color: #e76f51;
+  padding: 12px;
+  margin: 5px 0px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+#close-guardada {
+  text-align: right;
+}
+
+
+/*-------------VALIDACION---------------*/
+@keyframes inputVacio {
+  0% {
+    transform: rotateZ(2deg);
+  }
+  50% {
+    transform: rotateZ(-2deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+.inputVacio {
+  animation: inputVacio 3 0.2s;
+  border: 2px solid red;
+}
+.matcheo {
+  width: 50px;
+}
+.blue {
+  background-color: #7e89fd;
+}
+.red {
+  background-color: rgb(250, 76, 76);
+}
+.violet {
+  background-color: rgb(243, 106, 243);
+}
+.green {
+  background-color: rgb(69, 204, 69);
+}
+.orange {
+  background-color: rgb(224, 169, 67);
+}
+.lightblue {
+  background-color: lightblue;
+}
