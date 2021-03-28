@@ -32,10 +32,160 @@ let title4 = document.getElementById("title4");
 let title5 = document.getElementById("title5");
 let title6 = document.getElementById("title6");
 
-let mazo;
-fetch("../json/mazo.json")
-  .then((res) => res.json())
-  .then((res) => (mazo = res));
+let mazo = [
+  {
+    carta1: {
+      nombre: "Lana del Rey",
+      img: "lanadelrey.png",
+      info:
+        "Su música destaca por su estilizada calidad cinematográfica, su estilo retro, sus temas de romance trágico, glamour y melancolía.",
+    },
+    carta2: {
+      nombre: "Lorde",
+      img: "lorde.png",
+      info:
+        "Cantautora neozelandesa de indie pop y rock alternativo, de voz baja, oscura, y melancolica.",
+    },
+    carta3: {
+      nombre: "U2",
+      img: "u2.png",
+      info:
+        "Sus letras, a menudo ordenadas con imágenes espirituales, se centran en temas personales y temática de justicia social y paz.",
+    },
+    carta4: {
+      nombre: "Taylor Swift",
+      img: "taylorswift.png",
+      info:
+        "Es conocida por escribir grandes canciones narrativas y composiciones acerca de sus experiencias personales.",
+    },
+    carta5: {
+      nombre: "Kali Uchis",
+      img: "kaliuchis.png",
+      info:
+        "Con tan sólo 25 años nunca ha titubeado a la hora de mezclar estilos como R&B, funk, hip hop, regué, electrónica y hasta reguetón.",
+    },
+    carta6: {
+      nombre: "Rina Sawayama",
+      img: "rinasawayama.png",
+      info:
+        "Cantante de origen británico-japones de pop experimental y melodías complejas",
+    },
+    carta7: {
+      nombre: "Rosalía",
+      img: "rosalia.png",
+      info:
+        "Española que sabido reinventar el flamenco y la poesía clasica en música contemporanea",
+    },
+    carta8: {
+      nombre: "Korn",
+      img: "korn.png",
+      info:
+        "Son considerados los pioneros del género nu metal junto con Deftones.",
+    },
+    carta9: {
+      nombre: "The Pretty Reckless",
+      img: "tpr.png",
+      info:
+        "Es una banda de rock alternativo y post-grunge de Nueva York formada y encabezada por la cantante, modelo y actriz Taylor Momsen.",
+    },
+    carta10: {
+      nombre: "Kim Petras",
+      img: "kimpetras.png",
+      info:
+        "Es una cantante y compositora alemana que ha destacado en los géneros electro-house y dance pop.",
+    },
+    carta11: {
+      nombre: "Bruce Springsteen",
+      img: "bruce.png",
+      info:
+        "Sus canciones reflejan letras con aspectos autobiográficos, o relatos de personajes ficticios o novelescos que se enfrentan a retos o a puntos de inflexión en sus vidas.",
+    },
+    carta12: {
+      nombre: "Fleetwood Mac",
+      img: "fleetwood.png",
+      info:
+        "Es reconocida como una de las bandas más exitosas del mundo con más de 100 millones de copias vendidas, cuyo disco Rumours se posiciona dentro de los top 10 de la lista de los álbumes más vendidos de todos los tiempos.",
+    },
+    carta13: {
+      nombre: "Led Zeppelin",
+      img: "ledzeppelin.png",
+      info:
+        "Fue un grupo británico de hard rock fundado en 1968 por el guitarrista Jimmy Page, quien había pertenecido a The Yardbirds.",
+    },
+    carta14: {
+      nombre: "Deep Purple",
+      img: "deepurple.png",
+      info:
+        "Está considerada como una de las pioneras del hard-rock, y los pioneros del heavy metal junto a Led Zeppelin y Black Sabbath.",
+    },
+    carta15: {
+      nombre: "The Who",
+      img: "thewho.png",
+      info:
+        "Es una banda británica de rock considerada un ícono de la música del siglo XX, formada en 1962 con el nombre de The Detours que posteriormente cambió a The Who tras la incorporación del baterista Keith Moon.",
+    },
+    carta16: {
+      nombre: "Nirvana",
+      img: "nirvana.png",
+      info:
+        "Fue una banda de grunge estadounidense procedente de Aberdeen fundada por el vocalista y guitarrista Kurt Cobain y el bajista Krist Novoselic en 1987.",
+    },
+    carta17: {
+      nombre: "Pearl Jam",
+      img: "pearljam.png",
+      info:
+        "Es un grupo de grunge formado en Seattle, Estados Unidos, en el año 1990, con integrantes de las bandas Mother Love Bone y Temple of the Dog.",
+    },
+    carta18: {
+      nombre: "Fito Páez",
+      img: "fitopaez.png",
+      info:
+        "Es un cantautor, compositor, musico y director de cine argentino, integrante de la llamada trova rosarina,4​ es apodado como El trovador del rock argentino y uno de los más importantes exponentes del rock argentino.",
+    },
+    carta19: {
+      nombre: "Charly García",
+      img: "charly.png",
+      info:
+        "Es un cantautor, compositor, músico y productor argentino de rock, considerado uno de los compositores más importantes de Latinoamérica y de la historia de la música popular en español.",
+    },
+    carta20: {
+      nombre: "Pedro Aznar",
+      img: "pedroaznar.png",
+      info:
+        "Es un cantante, multiinstrumentista, compositor y poeta argentino. Fue integrante de los grupos Madre Atómica, Alas, Serú Girán, Spinetta Jade y Pat Metheny Group y desde 1993 está dedicado por completo a su carrera como solista.",
+    },
+    carta21: {
+      nombre: "Claudia Puyó",
+      img: "claudiapuyo.png",
+      info:
+        "Es una cantante argentina de blues. Es una de las figuras femeninas más reconocidas del rock argentino.",
+    },
+    carta22: {
+      nombre: "Kings of Leon",
+      img: "kol.png",
+      info:
+        "Está formado por tres hermanos, Caleb, Nathan y Jared Followill y su primo Matthew Followill. Cada miembro de la familia es conocido por su segundo nombre en vez del primero.",
+    },
+    carta23: {
+      nombre: "The Strokes",
+      img: "strokes.png",
+      info:
+        "Es una banda de rock originaria de Nueva York Estados Unidos formada en 1998 por el vocalista de la banda Julian Casablancas. Han vendido más de 8 millones de copias en todo el mundo.",
+    },
+    carta24: {
+      nombre: "Arcade Fire",
+      img: "arcadefire.png",
+      info:
+        "Fundada en 2001 por los amigos y compañeros de clase Win Butler y Josh Deu, la banda saltó a la fama en 2004 con el lanzamiento de su aclamado álbum debut Funeral, y ha ganado numerosos premios, incluyendo el Grammy al álbum del año.",
+    },
+    carta25: {
+      nombre: "The Kooks",
+      img: "thekooks.png",
+      info:
+        "Se describen a sí mismos como una banda de «pop», cuya música está influenciada principalmente por un movimiento conocido como la invasión británica de la década de 1960 y por el post-punk revival del nuevo milenio.",
+    },
+  },
+];
 //////////////////////////////////////////////////////////
 let vista5 = document.getElementById("guardadas");
 let guardadasBtn = document.getElementById("guardadasBtn");
@@ -43,6 +193,7 @@ guardadasBtn.addEventListener("click", verGuardadas);
 start.addEventListener("click", jugar);
 reroll.addEventListener("click", volverARepartir);
 results.addEventListener("click", verResultados);
+
 function jugar() {
   if (
     document.getElementById("player1").value.trim() == "" &&
@@ -71,15 +222,18 @@ function verGuardadas() {
 
   setTimeout("transicion1a5()", 450);
 }
+
 function transicion1a5() {
   vista5.classList.remove("off");
   datos.classList.add("off");
   setTimeout("prueba()", 100);
   // vista5.classList.remove("datos-out");
 }
+
 function prueba() {
   vista5.classList.remove("datos-out");
 }
+
 function volverARepartir() {
   sortearCartas();
   // repartirCartas(1, 2, 3, 4, 5, 6); prueba de parametros
@@ -275,13 +429,14 @@ let random3 = 0;
 let random4 = 0;
 let random5 = 0;
 let random6 = 0;
+
 function sortearCartas() {
-  random1 = Math.floor(Math.random() * (30 - 1) + 1);
-  random2 = Math.floor(Math.random() * (30 - 1) + 1);
-  random3 = Math.floor(Math.random() * (30 - 1) + 1);
-  random4 = Math.floor(Math.random() * (30 - 1) + 1);
-  random5 = Math.floor(Math.random() * (30 - 1) + 1);
-  random6 = Math.floor(Math.random() * (30 - 1) + 1);
+  random1 = Math.floor(Math.random() * (25 - 1) + 1);
+  random2 = Math.floor(Math.random() * (25 - 1) + 1);
+  random3 = Math.floor(Math.random() * (25 - 1) + 1);
+  random4 = Math.floor(Math.random() * (25 - 1) + 1);
+  random5 = Math.floor(Math.random() * (25 - 1) + 1);
+  random6 = Math.floor(Math.random() * (25 - 1) + 1);
   repartirCartas(
     player1,
     player2,
@@ -293,6 +448,7 @@ function sortearCartas() {
     random6
   );
 }
+
 let cardImg1 = document.getElementById("card-img1");
 let cardTitle1 = document.getElementById("card-title1");
 let cardInfo1 = document.getElementById("card-info1");
@@ -320,6 +476,7 @@ let resultimg5 = document.getElementById("result-circle5");
 let resultimg6 = document.getElementById("result-circle6");
 let jugadorfinal1 = document.getElementById("jugadorfinal1");
 let jugadorfinal2 = document.getElementById("jugadorfinal2");
+
 function repartirCartas(j1, j2, c1, c2, c3, c4, c5, c6) {
   console.log(c1, c2, c3, c4, c5, c6);
   let sumap1 = c1 + c2 + c3;
@@ -338,6 +495,7 @@ function repartirCartas(j1, j2, c1, c2, c3, c4, c5, c6) {
     match.src =
       "https://images.emojiterra.com/google/android-10/512px/274c.png";
   }
+
   title1.innerHTML = `Carta 1 de 3 de ${j1}`;
   title2.innerHTML = `Carta 2 de 3 de ${j1}`;
   title3.innerHTML = `Carta 3 de 3 de ${j1}`;
