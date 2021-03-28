@@ -33,7 +33,8 @@ let title5 = document.getElementById("title5");
 let title6 = document.getElementById("title6");
 
 let mazo;
-fetch("../json/mazo.json")
+
+fetch("mazo.json")
   .then((res) => res.json())
   .then((res) => (mazo = res));
 //////////////////////////////////////////////////////////
